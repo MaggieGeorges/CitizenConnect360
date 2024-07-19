@@ -1,0 +1,25 @@
+<app-header-gov></app-header-gov>
+
+<div class="container">
+    <div class="header">
+      <h1>Reported Incidents</h1>
+    </div>
+    <div class="incident-list">
+      <div *ngFor="let incident of incidents" class="incident-item">
+        <p><strong>Description:</strong> {{ incident.description }}</p>
+        <p><strong>Location:</strong> {{ incident.location }}</p>
+        <p><strong>Time:</strong> {{ incident.time }}</p>
+        <p><strong>User ID:</strong> {{ incident.userId }}</p>  <!-- Add this line -->
+        <div class="status-buttons">
+          <button [class.active]="incident.status === 'Under Review'" (click)="updateStatus(incident.id, 'Under Review')">Under Review</button>
+          <button [class.active]="incident.status === 'Resolved'" (click)="updateStatus(incident.id, 'Resolved')">Resolved</button>
+        </div>
+      </div>
+    </div>
+    <div class="ai-summary">
+      <h2>AI Summary of reported incidents</h2>
+      <p>{{ aiSummary }}</p>
+    </div>
+  </div>
+
+  <app-footer></app-footer>

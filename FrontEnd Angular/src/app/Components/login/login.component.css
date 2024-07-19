@@ -1,0 +1,206 @@
+
+.login-container {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 2rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin-bottom: 100px; /* Add margin to the bottom to prevent overlap */
+  }
+  
+  .login-container:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20px;
+    height: 100%;
+    background-color: green;
+    z-index: 1; /* Ensure the overlay is behind the content */
+  }
+  
+  .login-container:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: 20px;
+    background-color: green;
+    z-index: 1; /* Ensure the overlay is behind the content */
+  }
+  
+  .logo-image {
+    display: block;
+    margin: 0 auto 1rem;
+    height: 80px; /* Adjust as needed */
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+  }
+  
+  label {
+    margin: 0.5rem 0 0.2rem;
+  }
+  
+  input {
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: calc(100% - 10px); /* Ensure the input fits nicely */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  }
+  
+  button {
+    padding: 0.5rem;
+    margin-top: 1rem;
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: darkgreen;
+  }
+  body {
+    background-color: #f0f0f0; 
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .header img {
+    height: 50px; 
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  .login-container {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 2rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin-bottom: 100px; /* Add margin to the bottom to prevent overlap */
+  }
+  
+  .login-container:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20px;
+    height: 100%;
+    background-color: green;
+    z-index: 1; /* Ensure the overlay is behind the content */
+  }
+  
+  .login-container:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: 20px;
+    background-color: green;
+    z-index: 1; /* Ensure the overlay is behind the content */
+  }
+  
+  .logo-image {
+    display: block;
+    margin: 0 auto 1rem;
+    height: 80px; /* Adjust as needed */
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .input-group {
+    position: relative;
+    margin-bottom: 1rem;
+  }
+  
+  .input-group-addon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888;
+    pointer-events: none;
+  }
+  
+  input[type="text"],
+  input[type="password"] {
+    width: calc(100% - 0.2rem); /* Adjust the width to fit within the container */
+    padding: 10px 10px 10px 30px; /* Adjust padding to make space for the icon */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  }
+  
+  button {
+    padding: 0.5rem;
+    margin-top: 1rem;
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: darkgreen;
+  }
+  
+  a {
+    display: block;
+    margin-top: 1rem;
+    color:rgb(1, 77, 1);
+    text-decoration: none;
+  }
+  
+  a {
+    display: block;
+    margin-top: 1rem;
+    color: rgb(1, 77, 1);
+    text-decoration: none;
+  }
+  

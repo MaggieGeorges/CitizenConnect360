@@ -1,0 +1,55 @@
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+  }
+  
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 20px;
+  }
+  
+  
+  
+  .gov-official-views {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+    
+    .feedback-list {
+      margin-bottom: 20px;
+    }
+    
+    .feedback-list ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .feedback-list li {
+      margin-bottom: 10px;
+      padding: 10px;
+      border-bottom: 1px solid #ccc;
+    }
+    
+    .feedback-list li:last-child {
+      border-bottom: none;
+    }
+    
+    .ai-summary {
+      margin-top: 20px;
+    }
+    
+    .ai-summary p {
+      margin-bottom: 10px;
+    }

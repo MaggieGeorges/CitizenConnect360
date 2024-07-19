@@ -1,0 +1,8 @@
+<div *ngIf="document">
+    <h3>{{ document.title }}</h3>
+    <pdf-viewer [src]="document.file" [render-text]="true"></pdf-viewer>
+  </div>
+  <div *ngIf="!document">
+    <p>Please select a document to view.</p>
+  </div>
+  

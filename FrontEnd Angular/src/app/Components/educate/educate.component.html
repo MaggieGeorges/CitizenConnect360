@@ -1,0 +1,32 @@
+<app-header-login></app-header-login>
+
+<div class="educate-container">
+    <div class="sidebar">
+      <h2>Official Government Documents</h2>
+      <input type="text" placeholder="Search Document">
+      <ul>
+        <li *ngFor="let doc of documents" (click)="selectDocument(doc)">{{ doc.title }}</li>
+      </ul>
+    </div>
+    
+    <div class="content">
+      <app-pdf-viewer [document]="selectedDocument"></app-pdf-viewer>
+      
+      <div class="chat-area">
+        <div class="previous-chats">
+          <h3>Previous Chats</h3>
+          <div *ngFor="let chat of chatHistory">
+            <p><strong>{{ chat.date }}:</strong> {{ chat.message }}</p>
+          </div>
+        </div>
+        
+        <div class="chat-input">
+          <textarea [(ngModel)]="newMessage" placeholder="Enter text to message with the doc"></textarea>
+          <button (click)="sendMessage()">Send</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  <app-footer></app-footer>

@@ -1,0 +1,65 @@
+<app-header-login></app-header-login>
+<div class="incident-container">
+    <div class="incident-header">
+      <h2>Incident Report</h2>
+      <p>Describe the incident...</p>
+    </div>
+  
+    <form [formGroup]="incidentForm">
+      <div class="incident-form">
+        <label>Category:</label>
+        <select formControlName="category">
+          <option value="abductions">Abductions</option>
+          <option value="deaths">Deaths</option>
+          <option value="killings">Killings</option>
+          <option value="robbery">Robbery</option>
+          <!-- Add more categories as needed -->
+        </select>
+  
+        <label>Description:</label>
+        <textarea formControlName="description" rows="5"></textarea>
+  
+        <label>Location:</label>
+        <input formControlName="location" type="text" />
+  
+        <label>Date and Time:</label>
+        <input formControlName="datetime" type="datetime-local" />
+  
+        <label>Media:</label>
+        <input formControlName="media" type="file" accept="image/*,video/*,audio/*" />
+  
+        <button type="submit" [disabled]="!incidentForm.valid">Report Incident</button>
+      </div>
+    </form>
+  
+    <div class="incident-list">
+      <h2>Recent Incidents</h2>
+      <ul>
+        <li *ngFor="let incident of incidents">
+          <div class="incident-item">
+            <h3>{{ incident.category }}</h3>
+            <p>{{ incident.description }}</p>
+            <p>Location: {{ incident.location }}</p>
+            <p>Date and Time: {{ incident.datetime | date: 'medium' }}</p>
+            <img *ngIf="incident.media" [src]="incident.media" alt="Incident Media" />
+            <div class="comments">
+              <h4>Comments:</h4>
+              <ul>
+                <li *ngFor="let comment of incident.comments">
+                  <p>{{ comment.text }}</p>
+                  <p>By {{ comment.username }} on {{ comment.datetime | date: 'medium' }}</p>
+                </li>
+              </ul>
+              <form [formGroup]="commentForm">
+                <input formControlName="text" type="text" placeholder="Add a comment..." />
+                <button type="submit" [disabled]="!commentForm.valid">Comment</button>
+              </form>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+
+  <app-footer></app-footer>

@@ -1,0 +1,151 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f0f0f0;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  /* Main Section */
+  .main-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+  }
+  
+  /* Hero Section */
+  .hero {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+  
+  .hero-image {
+    flex: 1;
+    margin-right: 20px;
+    max-width: 50%; /* Adjust the maximum width as needed */
+  }
+  
+  .hero-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  .hero-content {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .hero-content h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  
+  .hero-content p {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  
+  .hero-content ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .hero-content ul li {
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+  
+  .cta {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    display: inline-block;
+  }
+  
+  .cta.learn-more {
+    background-color: transparent;
+    color: #4CAF50;
+    border: 2px solid #4CAF50;
+    margin-top: 10px;
+  }
+  
+  .cta:hover {
+    background-color: #d3f3d5;
+  }
+  
+  /* Features Section */
+  .features-section {
+    background-color: #f7f7f7;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .features h2 {
+    width: 100%;
+    font-size: 28px;
+    margin-bottom: 30px;
+    color: #333;
+  }
+  
+  .features .feature {
+    flex: 1 1 45%;
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .features .feature i {
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: #4CAF50;
+  }
+  
+  .features .feature h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #333;
+  }
+  
+  .features .feature p {
+    font-size: 16px;
+    color: #666;
+  }
+  
+  /* Call to Action Section */
+  .cta-section {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .cta-section h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .cta-section .cta {
+    margin-top: 10px;
+  }
+  

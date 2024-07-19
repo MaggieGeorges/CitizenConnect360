@@ -1,0 +1,42 @@
+<app-header-login></app-header-login>
+
+<div class="container">
+  <div class="sidebar">
+    <h2>Categories</h2>
+    <ul>
+      <li *ngFor="let category of categories">
+        <a (click)="onSelectCategory(category.name)">{{ category.name }}</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="polls">
+    <h2>Polls</h2>
+    <ul *ngIf="polls.length > 0; else noPolls">
+      <li *ngFor="let poll of polls">
+        <h3>{{ poll.question }}</h3>
+        <p>{{ poll.description }}</p>
+        <ul>
+          <li *ngFor="let answer of poll.answers">
+            <input type="radio" name="answer" [value]="answer" (click)="onVote(poll.id, answer)">
+            <span>{{ answer }}</span>
+          </li>
+        </ul>
+        <div class="results" *ngIf="poll.votes">
+          <h4>Results:</h4>
+          <ul>
+            <li *ngFor="let answer of poll.answers">
+              {{ answer }}: {{ poll.votes[answer] }} ({{ poll.votes[answer] / poll.totalVotes * 100 | number: '.2-2' }}%)
+            </li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+
+    <ng-template #noPolls>
+      <p>No polls found for this category.</p>
+    </ng-template>
+  </div>
+</div>
+
+<app-footer></app-footer>

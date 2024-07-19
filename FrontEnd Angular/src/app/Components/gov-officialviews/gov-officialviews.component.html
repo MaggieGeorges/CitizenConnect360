@@ -1,0 +1,25 @@
+<app-header-gov></app-header-gov>
+
+
+<div class="gov-official-views">
+    <h1>Gov Official Views</h1>
+  
+    <div class="feedback-list">
+      <h2>Feedback</h2>
+      <ul>
+        <li *ngFor="let item of feedback">
+          <p>{{ item.message }}</p>
+          <span>Category: {{ item.category }}</span>
+          <span>Sentiment: {{ item.sentiment }}</span>
+        </li>
+      </ul>
+    </div>
+  
+    <div class="ai-summary">
+      <h2>AI Summary</h2>
+      <p>Overall Sentiment: {{ aiSummary.overallSentiment }}</p>
+      <p>Top Concerns: {{ aiSummary.topConcerns.join(', ') }}</p>
+      <p>Emerging Themes: {{ aiSummary.emergingThemes.join(', ') }}</p>
+      <p>Actionable Recommendations: {{ aiSummary.actionableRecommendations.join(', ') }}</p>
+    </div>
+  </div>

@@ -1,0 +1,47 @@
+
+<app-header-admin></app-header-admin>
+  
+  <main>
+    <h1>Registered Official Government</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Name of User</th>
+          <th>Email</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{ user.name }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.status }}</td>
+          <td><button (click)="deleteUser(user)">Delete</button></td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <h1>Users awaiting approval</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Name of User</th>
+          <th>Email</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of usersAwaitingApproval">
+          <td>{{ user.name }}</td>
+          <td>{{ user.email }}</td>
+          <td>
+            <button (click)="approveUser(user)">Approve</button>
+            <button (click)="rejectUser(user)">Reject</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </main>
+  
+  <app-footer></app-footer>

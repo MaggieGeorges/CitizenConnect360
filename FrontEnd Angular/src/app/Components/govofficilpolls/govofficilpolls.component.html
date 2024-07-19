@@ -1,0 +1,39 @@
+<app-header-gov></app-header-gov>
+
+
+<div class="container">
+    <div class="header">
+      <h1>Create new poll</h1>
+    </div>
+    <div class="form-group">
+      <label>Poll Category:</label>
+      <div *ngFor="let category of categories">
+        <input type="checkbox" [(ngModel)]="newPoll.category" [value]="category">{{ category }}
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Poll Question:</label>
+      <input type="text" [(ngModel)]="newPoll.question">
+    </div>
+    <div class="form-group" *ngFor="let option of newPoll.options; let i = index">
+      <label>Poll Option{{i+1}}:</label>
+      <input type="text" [(ngModel)]="newPoll.options[i]">
+    </div>
+    <button (click)="addOption()">Add Option</button>
+    <button (click)="createPoll()">Create Poll</button>
+  
+    <div class="previous-polls">
+      <h2>Previous Polls and Results</h2>
+      <div *ngFor="let poll of polls">
+        <p><strong>Poll {{poll.id}}:</strong> {{ poll.question }}</p>
+        <button (click)="deletePoll(poll.id)">Delete</button>
+        <button (click)="updatePoll(poll)">Update</button>
+        <div *ngFor="let option of poll.options">
+          <p>{{ option }}: {{ poll.results[option] || 0 }} votes</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <app-footer></app-footer>
+  

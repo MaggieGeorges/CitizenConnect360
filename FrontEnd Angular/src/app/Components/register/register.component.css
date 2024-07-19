@@ -1,0 +1,217 @@
+.register-container {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 2rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  
+  .register-container:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;.register-container {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 2rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  
+  .register-container:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20px;
+    height: 100%;
+    background-color: green;
+    z-index: 1; /* Ensure the overlay is behind the content */
+  }
+  
+  .register-container:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: 20px;
+    background-color: green;
+    z-index: 1; /* Ensure the overlay is behind the content */
+  }
+  
+  .logo-image {
+    display: block;
+    margin: 0 auto 1rem;
+    height: 80px; /* Adjust as needed */
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .input-group {
+    position: relative;
+    margin-bottom: 1rem;
+  }
+  
+  .input-group-addon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888;
+  }
+  
+  input[type="text"],
+  input[type="password"] {
+    width: calc(100% - 10px);
+    padding: 10px 10px 10px 30px; /* Adjust padding to make space for the icon */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+  }
+  
+  button {
+    padding: 0.5rem;
+    margin-top: 1rem;
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: darkgreen;
+  }
+  
+  p {
+    margin-top: 1rem;
+  }
+  
+  button[routerLink] {
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    background-color: grey;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button[routerLink]:hover {
+    background-color: darkgrey;
+  }
+  
+  a {
+    display: block;
+    margin-top: 1rem;
+    color: blue;
+    text-decoration: none;
+  }
+  
+    width: 20px;
+    height: 100%;
+    background-color: green;
+    z-index: 1; /* Ensure the overlay is behind the content */
+  }
+  
+  .register-container:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: 20px;
+    background-color: green;
+    z-index: 1; /* Ensure the overlay is behind the content */
+  }
+  
+  .logo-image {
+    display: block;
+    margin: 0 auto 1rem;
+    height: 80px; /* Adjust as needed */
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .input-group {
+    position: relative;
+    margin-bottom: 1rem;
+  }
+  
+  .input-group-addon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888;
+  }
+  
+  input[type="text"],
+  input[type="password"] {
+    width: calc(100% - 10px);
+    padding: 10px 10px 10px 30px; /* Adjust padding to make space for the icon */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+  }
+  
+  button {
+    padding: 0.5rem;
+    margin-top: 1rem;
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: darkgreen;
+  }
+  
+  p {
+    margin-top: 1rem;
+  }
+  
+  button[routerLink] {
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    background-color: grey;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button[routerLink]:hover {
+    background-color: darkgrey;
+  }
+  
+  a {
+    display: block;
+    margin-top: 1rem;
+    color: blue;
+    text-decoration: none;
+  }
+  

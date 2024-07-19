@@ -1,0 +1,41 @@
+body {
+    background-color: #f0f0f0; /* Grey background */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-image: url('/assets/CitizensConnect.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 1rem;
+    height: 200px; 
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo img {
+    height: auto;
+    max-height: 100px;
+    margin-right: 10px;
+  }
+  
+  ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+  }
+  
+  ul li a {
+    text-decoration: none;
+    color: #000;
+    
+  }

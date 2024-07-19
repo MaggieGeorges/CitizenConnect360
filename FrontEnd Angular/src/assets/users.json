@@ -1,0 +1,23 @@
+[
+    {
+      "id": 1,
+      "username": "citizen1",
+      "email": "citizen1@example.com",
+      "password": "password123",
+      "role": "citizen"
+    },
+    {
+      "id": 2,
+      "username": "govofficial1",
+      "email": "govofficial1@example.com",
+      "password": "password123",
+      "role": "gov_official"
+    },
+    {
+      "id": 3,
+      "username": "admin1",
+      "email": "admin1@example.com",
+      "password": "password123",
+      "role": "admin"
+    }
+  ]

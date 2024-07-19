@@ -1,0 +1,28 @@
+<app-header-login></app-header-login>
+<div class="container">
+    <img [src]="profileImage" alt="Profile Image" class="profile-image">
+    <div class="profile-info">
+      <h1>{{ name }}</h1>
+      <p>{{ occupation }}</p>
+    </div>
+    <div class="profile-details">
+      <div>
+        <label>Email:</label>
+        <span>{{ email }}</span>
+      </div>
+      <div>
+        <label>Location:</label>
+        <span>{{ location }}</span>
+      </div>
+    </div>
+    <div class="social-icons">
+      <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+    <a href="#" class="btn btn-primary">Edit Profile</a>
+  </div>
+
+  
+  <app-footer></app-footer>

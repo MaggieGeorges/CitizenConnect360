@@ -1,0 +1,67 @@
+<!--
+
+<app-header></app-header>
+<div class="register-container">
+  <img src="/assets/logo.png" alt="CitizensConnect360 Logo" class="logo-image">
+  <form>
+    <h2>Register</h2>
+    <div class="input-group">
+      <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+      <input type="text" id="username" name="email" placeholder="Enter your Email">
+    </div>
+
+    <div class="input-group">
+      <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+      <input type="password" id="password" name="password" placeholder="Enter your Password">
+    </div>
+
+    <div class="input-group">
+      <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+      <input type="password" id="confirm-password" name="confirm_password" placeholder="Confirm your Password">
+    </div>
+
+    <label for="role">Role:</label>
+    <div class="input-group">
+      <select id="role" name="role">
+        <option value="citizen">Citizen</option>
+        <option value="gov_official">Government Official</option>
+        <option value="admin">Admin</option>
+      </select>
+    </div>
+
+    <button type="submit">Sign Up</button>
+
+    <p>Already have an account? Sign In Below!</p>
+    <button [routerLink]="['/login']">Sign in to your account</button>
+  </form>
+</div>
+<app-footer></app-footer>
+-->
+
+<app-header></app-header>
+<div class="register-container">
+  <img src="/assets/logo.png" alt="CitizensConnect360 Logo" class="logo-image">
+  <form>
+    <h2>Register</h2>
+    <div class="input-group">
+      <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+      <input type="text" id="username" name="email" placeholder="Email">
+    </div>
+
+    <div class="input-group">
+      <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+      <input type="password" id="password" name="password" placeholder="Password">
+    </div>
+
+    <div class="input-group">
+      <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+      <input type="password" id="confirm-password" name="confirm_password" placeholder="Confirm Password">
+    </div>
+
+    <button type="submit">Sign Up</button>
+
+    <p>Already have an account?</p>
+    <button [routerLink]="['/login']">Sign in to your account</button>
+  </form>
+</div>
+<app-footer></app-footer>

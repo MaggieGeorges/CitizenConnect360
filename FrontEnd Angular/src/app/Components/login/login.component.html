@@ -1,0 +1,23 @@
+<app-header></app-header>
+
+<div class="login-container">
+  <img src="/assets/logo.png" alt="Logo" class="logo-image">
+  <form>
+    <h2>Login</h2>
+    <div class="input-group">
+      <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+      <input type="text" placeholder="Email">
+    </div>
+    <div class="input-group">
+      <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+      <input type="password" placeholder="Password">
+    </div>
+    <button type="submit">Login</button>
+    <p>Forgot Password? <a [routerLink]="['/resetpassword']">Click here to reset.</a></p>
+    <p>New here? Don't have an Account? Register here below!</p>
+    <button [routerLink]="['/register']">Register New Account</button>
+  </form>
+</div>
+
+
+<app-footer></app-footer>

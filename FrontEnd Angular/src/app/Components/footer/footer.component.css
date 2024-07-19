@@ -1,0 +1,30 @@
+/* footer.component.css */
+footer {
+    background-color: #333; /* Darker background color */
+    color: #fff; /* White text color for contrast */
+    text-align: center;
+    padding: 0.5rem; /* Reduced padding to occupy less space */
+    width: 100%;
+    bottom: 0;
+    font-size: 0.9rem; 
+  }
+  
+  .social-icons {
+    margin: 0.5rem 0; /* Reduced margin */
+  }
+  
+  .social-icons a {
+    margin: 0 0.5rem;
+    text-decoration: none;
+    color: #fff; /* White color for social icons */
+  }
+  
+  footer a {
+    color: #fff; /* White color for footer links */
+    text-decoration: none;
+  }
+  
+  footer a:hover {
+    text-decoration: underline;
+  }
+  

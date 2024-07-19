@@ -1,0 +1,37 @@
+<app-header></app-header>
+
+<!-- Main Section -->
+<section class="main-section">
+  <!-- Hero Section -->
+  <div class="hero">
+    <div class="hero-image">
+      <img src="/assets/image.jpg" alt="Community Image">
+    </div>
+    <div class="hero-content">
+      <h1>Welcome to CitizenConnect360</h1>
+      <p>A free platform to connect, report, and stay informed. With CitizenConnect360 you can:</p>
+      <ul>
+        <li>
+           <h3>  <i class="fas fa-flag"></i> Report Incidents and Issues</h3>
+          <p>Report incidents and issues happening around you and help keep your community informed</p>
+        </li>
+        <li>
+          <h3> <i class="fas fa-bell"></i> Stay updated with real-time notifications and updates.</h3>
+          <p>Get real-time updates on incidents, events, and news in your community</p>
+        </li>
+        <li>
+          <h3> <i class="fas fa-poll"></i>  Participate in community polls.</h3>
+          <p>Have your say in community polls and help shape the future of your neighborhood</p>
+        </li>
+        <li>
+          <h3> <i class="fas fa-book"></i>  Access valuable resources and support services. </h3>
+          <p>Get access to valuable resources and support services to help you and your community thrive</p>
+        </li>
+      </ul>
+      <!--<a href="#" class="cta learn-more">Sign Up for CitizenConnect360</a>-->
+      <button [routerLink]="['/register']" class="cta learn-more">Sign Up for CitizenConnect360</button>
+    </div>
+  </div>
+</section>
+
+<app-footer></app-footer>
