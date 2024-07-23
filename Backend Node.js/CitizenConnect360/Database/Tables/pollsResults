@@ -1,0 +1,11 @@
+USE Citizensconnect;
+GO
+
+CREATE TABLE PollResults (
+    PollId INT PRIMARY KEY,
+    Option1 NVARCHAR(255),
+    Option2 NVARCHAR(255),
+    Option3 NVARCHAR(255),
+    -- Add more options as needed
+    FOREIGN KEY (PollId) REFERENCES Polls(Id)
+);

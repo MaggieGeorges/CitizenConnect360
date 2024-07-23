@@ -3,6 +3,7 @@ import { EmailService } from '../../Services/email.service';
 import { HeaderComponent } from '../header/header.component';
 import { FooterComponent } from '../footer/footer.component';
 import { RouterModule } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-resetpassword',
@@ -12,21 +13,20 @@ import { RouterModule } from '@angular/router';
   styleUrl: './resetpassword.component.css'
 })
 export class ResetpasswordComponent {
-  // constructor(private emailService: EmailService) {}
+  email: string = '';
 
-  // onSubmit(form: any) {
-  //   const email = form.value.email; // Get the email from the form
-  //   this.emailService.sendResetEmail(email)
-  //     .subscribe(
-  //       () => {
-  //         // Success! Handle success message (e.g., display a confirmation)
-  //         console.log('Reset email sent successfully');
-  //       },
-  //       (error) => {
-  //         // Error sending email
-  //         console.error('Error sending reset email:', error);
-  //         // Display an error message to the user
-  //       }
-  //     );
-  //   }
+  constructor(private emailService: EmailService, private router: Router) {}
+
+  submitEmail() {
+    this.emailService.sendResetEmail(this.email).subscribe(
+      response => {
+        alert('Reset email sent');
+        this.router.navigate(['/login']);
+      },
+      error => {
+        alert('Error sending reset email');
+      }
+    );
   }
+}
+  

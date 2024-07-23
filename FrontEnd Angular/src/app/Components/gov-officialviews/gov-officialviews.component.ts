@@ -1,56 +1,40 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { HeaderGovComponent } from '../header-gov/header-gov.component';
+import { HttpClient } from '@angular/common/http';
 
-
-interface Feedback { // Define the Feedback interface
+interface Feedback {
   id: number;
   message: string;
   category: string;
   sentiment: string; // positive, negative, neutral
 }
+
 @Component({
   selector: 'app-gov-officialviews',
   standalone: true,
   imports: [CommonModule, HeaderGovComponent],
   templateUrl: './gov-officialviews.component.html',
-  styleUrl: './gov-officialviews.component.css'
+  styleUrls: ['./gov-officialviews.component.css']
 })
 export class GovOfficialviewsComponent implements OnInit {
-  feedback: Feedback[] = [
-    {
-      id: 1,
-      message: 'This firm bill should not be passed at all. Everything becomes too costly.',
-      category: 'Economy',
-      sentiment: 'negative'
-    },
-    {
-      id: 2,
-      message: 'We reject the government should have a sit down and restructure this.',
-      category: 'Politics',
-      sentiment: 'negative'
-    },
-    {
-      id: 3,
-      message: 'This bill is too much heavy on us Mr President. We don\'t want it.',
-      category: 'Economy',
-      sentiment: 'negative'
-    },
-    // Add more dummy data here...
-  ];
+  feedback: Feedback[] = [];
+  aiSummary: any = {};
 
-  aiSummary: any = {
-    overallSentiment: 'negative',
-    topConcerns: ['Economy', 'Politics'],
-    emergingThemes: ['Cost of living', 'Government accountability'],
-    actionableRecommendations: ['Reconsider the bill', 'Engage in public dialogue']
-  };
-
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
+    this.loadFeedback();
+    this.loadAISummary();
   }
 
-} 
+  loadFeedback(): void {
+    this.http.get<Feedback[]>('http://localhost:3000/api/feedback')
+      .subscribe(feedback => this.feedback = feedback);
+  }
 
-
+  loadAISummary(): void {
+    this.http.get<any>('http://localhost:3000/api/ai-summary')
+      .subscribe(summary => this.aiSummary = summary);
+  }
+}

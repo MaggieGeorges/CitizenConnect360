@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormGroup, FormControl, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HeaderLoginComponent } from '../header-login/header-login.component';
-import { HeaderComponent } from '../header/header.component';
 import { FooterComponent } from '../footer/footer.component';
+import { HttpClient } from '@angular/common/http';
 
 interface Post {
   id: number;
@@ -32,18 +32,28 @@ interface Comment {
 export class CitizensviewsComponent implements OnInit {
   posts: Post[] = [];
   newPostForm!: FormGroup;
+  newCommentForm!: FormGroup;
+  currentCommentPostId: number | null = null; // To track which post is being commented on
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
     this.newPostForm = new FormGroup({
       title: new FormControl('', Validators.required),
       content: new FormControl('', Validators.required)
     });
+    this.newCommentForm = new FormGroup({
+      content: new FormControl('', Validators.required)
+    });
+    this.loadPosts();
+  }
+
+  loadPosts(): void {
+    this.http.get<Post[]>('http://localhost:3000/api/posts')
+      .subscribe(posts => this.posts = posts);
   }
 
   createPost(): void {
-    // Call API to create a new post
     const titleControl = this.newPostForm.get('title');
     const contentControl = this.newPostForm.get('content');
   
@@ -57,18 +67,43 @@ export class CitizensviewsComponent implements OnInit {
         likes: 0,
         comments: []
       };
-      this.posts.push(newPost);
-      this.newPostForm.reset();
+
+      this.http.post<Post>('http://localhost:3000/api/posts', newPost)
+        .subscribe(post => {
+          this.posts.push(post);
+          this.newPostForm.reset();
+        });
     }
   }
 
   likePost(post: Post): void {
-    post.likes++;
+    this.http.post(`http://localhost:3000/api/posts/${post.id}/like`, {})
+      .subscribe(() => post.likes++);
   }
 
-  commentPost(post: Post): void {
-    // Open a modal or display a form to create a new comment
-    // For now, let's just log the post ID
-    console.log(`Comment on post ${post.id}`);
+  commentPost(postId: number): void {
+    const contentControl = this.newCommentForm.get('content');
+
+    if (contentControl) {
+      const newComment: Comment = {
+        id: 0, // This will be set by the backend
+        content: contentControl.value,
+        author: 'John Doe', // Replace with actual user data
+        date: new Date().toISOString()
+      };
+
+      this.http.post<Comment>(`http://localhost:3000/api/posts/${postId}/comment`, newComment)
+        .subscribe(comment => {
+          const post = this.posts.find(p => p.id === postId);
+          if (post) {
+            post.comments.push(comment);
+          }
+          this.newCommentForm.reset();
+        });
+    }
+  }
+
+  setCommentPostId(postId: number): void {
+    this.currentCommentPostId = postId;
   }
 }

@@ -1,37 +1,43 @@
 <app-header-login></app-header-login>
 
 <div class="main-content">
-    <div class="post-list">
-      <div class="post" *ngFor="let post of posts">
-        <div class="post-header">
-          <h2>{{ post.title }}</h2>
-          <p>Posted by {{ post.author }} on {{ post.date }}</p>
-        </div>
-        <div class="post-content">
-          <p>{{ post.content }}</p>
-        </div>
-        <div class="post-actions">
-          <button (click)="likePost(post)">Like ({{ post.likes }})</button>
-          <button (click)="commentPost(post)">Comment ({{ post.comments.length }})</button>
-        </div>
-        <div class="post-comments" *ngIf="post.comments.length > 0">
-          <div class="comment" *ngFor="let comment of post.comments">
-            <p>{{ comment.content }}</p>
-            <p>Posted by {{ comment.author }} on {{ comment.date }}</p>
-          </div>
+  <div class="post-list">
+    <div class="post" *ngFor="let post of posts">
+      <div class="post-header">
+        <h2>{{ post.title }}</h2>
+        <p>Posted by {{ post.author }} on {{ post.date }}</p>
+      </div>
+      <div class="post-content">
+        <p>{{ post.content }}</p>
+      </div>
+      <div class="post-actions">
+        <button (click)="likePost(post)">Like ({{ post.likes }})</button>
+        <button (click)="setCommentPostId(post.id)">Comment ({{ post.comments.length }})</button>
+      </div>
+      <div *ngIf="currentCommentPostId === post.id">
+        <form [formGroup]="newCommentForm">
+          <textarea formControlName="content" placeholder="Add a comment"></textarea>
+          <button type="button" (click)="commentPost(post.id)">Submit Comment</button>
+        </form>
+      </div>
+      <div class="post-comments" *ngIf="post.comments.length > 0">
+        <div class="comment" *ngFor="let comment of post.comments">
+          <p>{{ comment.content }}</p>
+          <p>Posted by {{ comment.author }} on {{ comment.date }}</p>
         </div>
       </div>
     </div>
-    <div class="new-post-form">
-      <h2>Create a New Post</h2>
-      <form [formGroup]="newPostForm">
-        <label>Title:</label>
-        <input formControlName="title" type="text">
-        <label>Content:</label>
-        <textarea formControlName="content"></textarea>
-        <button type="submit" (click)="createPost()">Post</button>
-      </form>
-    </div>
   </div>
+  <div class="new-post-form">
+    <h2>Create a New Post</h2>
+    <form [formGroup]="newPostForm">
+      <label>Title:</label>
+      <input formControlName="title" type="text">
+      <label>Content:</label>
+      <textarea formControlName="content"></textarea>
+      <button type="button" (click)="createPost()">Post</button>
+    </form>
+  </div>
+</div>
 
-  <app-footer></app-footer>
+<app-footer></app-footer>

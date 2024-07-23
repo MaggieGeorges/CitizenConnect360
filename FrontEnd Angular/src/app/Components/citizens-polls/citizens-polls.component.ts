@@ -42,8 +42,9 @@ export class CitizensPollsComponent implements OnInit {
   ];
 
   selectedCategory: string = '';
+  votedPolls: number[] = []; 
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
   }
@@ -54,14 +55,29 @@ export class CitizensPollsComponent implements OnInit {
   }
 
   onVote(pollId: number, answer: string): void {
-    const poll = this.polls.find(p => p.id === pollId);
-    if (poll) {
-      if (!poll.votes[answer]) {
-        poll.votes[answer] = 1;
-      } else {
-        poll.votes[answer]++;
-      }
-      poll.totalVotes++;
+    if (this.hasVoted(pollId)) {
+        alert('You have already voted for this poll.');
+        return;
     }
-  }
+
+    // Add vote through an API call
+    this.http.post(`/api/polls/${pollId}/vote`, { userId: this.getUserId(), option: answer })
+        .subscribe(() => {
+            // Update local vote counts
+            const poll = this.polls.find(p => p.id === pollId);
+            if (poll) {
+                poll.results[answer] = (poll.results[answer] || 0) + 1;
+            }
+        });
+}
+
+hasVoted(pollId: number): boolean {
+    // Check if the user has voted for this poll
+    return this.votedPolls.includes(pollId);
+}
+
+getUserId(): number {
+    // Implement logic to get the current user's ID
+    return 1; // Replace with actual user ID retrieval
+}
 }

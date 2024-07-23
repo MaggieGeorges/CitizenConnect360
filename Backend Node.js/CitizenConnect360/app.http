@@ -1,0 +1,159 @@
+# Register a new user
+POST http://localhost:3000/api/users/register
+Content-Type: application/json
+
+{
+  "email": "georgesmaggie735@gmail.com",
+  "password": "Maggie@Admin254!",
+  "role": "admin"
+}
+
+#### Authenticate a user
+POST http://localhost:3000/api/users/login
+Content-Type: application/json
+
+{
+  "email": "maggiegeorges254@gmail.com",
+  "password": "Maggie@2814!"
+}
+
+### Get user details 
+
+GET http://localhost:3000/api/users/1006
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEwMDYsInJvbGUiOiJjaXRpemVuIiwiaWF0IjoxNzIxNjUzOTIwLCJleHAiOjE3MjE2NTc1MjB9.t-J_Yq2SC6OUr6g0oZquMgqLh-NgIMxw1iyTc9eh0lo
+
+
+
+INCIDENTS:
+### POST/REPORT Incidents
+POST http://localhost:3000/api/incidents/report
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEwMDYsInJvbGUiOiJjaXRpemVuIiwiaWF0IjoxNzIxNjQwODEyLCJleHAiOjE3MjE2NDQ0MTJ9.jkeJjyIyGPJ1c4N95I_sVwBJhlUfRr662MT674DLKLI
+
+{
+  "description": "Fire in the downtown area.",
+  "location": "Downtown",
+  "datetime": "2024-07-21T12:00:00Z",
+  "media": "link_to_media",
+  "userId": 101
+}
+
+
+### GET ALL Incidents
+GET http://localhost:3000/api/incidents
+
+### Update Incident Status
+POST http://localhost:3000/api/incidents/update-status
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEwMDcsInJvbGUiOiJnb3Zfb2ZmaWNpYWwiLCJpYXQiOjE3MjE2NDE2NDUsImV4cCI6MTcyMTY0NTI0NX0.sw2mSJLlxBpA8uBtR09NjigQoAaknp7gWLNmbXBzP58
+
+{
+  "id": 1,
+  "status": "Under Review"
+}
+
+
+### Add a Comment to an Incident
+POST http://localhost:3000/api/incidents/comment
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEwMDYsInJvbGUiOiJjaXRpemVuIiwiaWF0IjoxNzIxNjQwODEyLCJleHAiOjE3MjE2NDQ0MTJ9.jkeJjyIyGPJ1c4N95I_sVwBJhlUfRr662MT674DLKLI
+
+{
+  "incidentId": 1,
+  "text": "This incident is under control now."
+}
+
+
+### Get Comments for an Incident
+GET http://localhost:3000/api/incidents/comments/1
+
+
+POSTS/VIEWS:
+### Get All Posts
+GET http://localhost:3000/api/posts
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEwMDYsInJvbGUiOiJjaXRpemVuIiwiaWF0IjoxNzIxNjQ4Nzc2LCJleHAiOjE3MjE2NTIzNzZ9.J8ZFYo7ZpGlLG6Mt_MM3pBMBiayIa3bIxzxHEPBjhQY
+
+### Create a New Post
+POST http://localhost:3000/api/posts
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEwMDYsInJvbGUiOiJjaXRpemVuIiwiaWF0IjoxNzIxNjQ4Nzc2LCJleHAiOjE3MjE2NTIzNzZ9.J8ZFYo7ZpGlLG6Mt_MM3pBMBiayIa3bIxzxHEPBjhQY
+
+{
+  "title": "New Post Title",
+  "content": "Content of the new post",
+  "author": "Author Name"
+}
+
+### Like a Post
+POST http://localhost:3000/api/posts/1/like
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEwMDYsInJvbGUiOiJjaXRpemVuIiwiaWF0IjoxNzIxNjQ4Nzc2LCJleHAiOjE3MjE2NTIzNzZ9.J8ZFYo7ZpGlLG6Mt_MM3pBMBiayIa3bIxzxHEPBjhQY
+
+{}
+
+# Comments
+### Add a Comment to a Post
+POST http://localhost:3000/api/posts/1/comments
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEwMDYsInJvbGUiOiJjaXRpemVuIiwiaWF0IjoxNzIxNjQ4Nzc2LCJleHAiOjE3MjE2NTIzNzZ9.J8ZFYo7ZpGlLG6Mt_MM3pBMBiayIa3bIxzxHEPBjhQY
+
+{
+  "content": "This is a comment.",
+  "author": "Commenter Name"
+}
+
+### Get Comments for a speific Post
+GET http://localhost:3000/api/posts/1/comments
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEwMDYsInJvbGUiOiJjaXRpemVuIiwiaWF0IjoxNzIxNjQ4Nzc2LCJleHAiOjE3MjE2NTIzNzZ9.J8ZFYo7ZpGlLG6Mt_MM3pBMBiayIa3bIxzxHEPBjhQY
+
+
+
+#POLLS
+
+### Get all polls
+GET http://localhost:3000/api/polls
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEwMDYsInJvbGUiOiJjaXRpemVuIiwiaWF0IjoxNzIxNjUzOTIwLCJleHAiOjE3MjE2NTc1MjB9.t-J_Yq2SC6OUr6g0oZquMgqLh-NgIMxw1iyTc9eh0lo
+
+### Create a new poll
+POST http://localhost:3000/api/polls
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEwMDcsInJvbGUiOiJnb3Zfb2ZmaWNpYWwiLCJpYXQiOjE3MjE2NTE3NTYsImV4cCI6MTcyMTY1NTM1Nn0.iBwmaLh7Etz9f3iJ2l10adyHLusMdArepiE2MGPYc68
+
+{
+  "question": "Are the protests helpful?",
+  "category": "Maandamano",
+  "options": ["Yes", "No", "Very Helpful", "Kinda"]
+}
+
+### Update an existing poll
+PUT http://localhost:3000/api/polls/5
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEwMDcsInJvbGUiOiJnb3Zfb2ZmaWNpYWwiLCJpYXQiOjE3MjE2NTE3NTYsImV4cCI6MTcyMTY1NTM1Nn0.iBwmaLh7Etz9f3iJ2l10adyHLusMdArepiE2MGPYc68
+
+{
+  "question": "Are the protests helpful?",
+  "category": "Protests",
+  "options": ["Hell Yes!!!", "No", "Very Helpful", "Kinda"]
+}
+
+
+
+### Delete a poll
+DELETE http://localhost:3000/api/polls/4
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEwMDcsInJvbGUiOiJnb3Zfb2ZmaWNpYWwiLCJpYXQiOjE3MjE2NTE3NTYsImV4cCI6MTcyMTY1NTM1Nn0.iBwmaLh7Etz9f3iJ2l10adyHLusMdArepiE2MGPYc68
+
+
+### Vote on a poll
+POST http://localhost:3000/api/polls/3/vote
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEwMDYsInJvbGUiOiJjaXRpemVuIiwiaWF0IjoxNzIxNjUzOTIwLCJleHAiOjE3MjE2NTc1MjB9.t-J_Yq2SC6OUr6g0oZquMgqLh-NgIMxw1iyTc9eh0lo
+
+{
+  "userId": 1006,
+  "option": "Red"
+}
+
+
+### Get results for a poll
+GET http://localhost:3000/api/polls/3/results
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEwMDYsInJvbGUiOiJjaXRpemVuIiwiaWF0IjoxNzIxNjUzOTIwLCJleHAiOjE3MjE2NTc1MjB9.t-J_Yq2SC6OUr6g0oZquMgqLh-NgIMxw1iyTc9eh0lo
